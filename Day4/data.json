@@ -1,0 +1,24 @@
+{
+
+
+"users":[
+
+
+  {
+    "name":"ashok",
+    "id":2
+  }
+],
+"students":[
+
+ {
+  "name":"dhiraj",
+  "id":1
+ },
+ {
+  "name":"Dhiraj",
+  "id":2
+ }
+]
+
+}
