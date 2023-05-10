@@ -1,0 +1,1 @@
+route visited:/ | Method:GET | Response:19msroute visited:/favicon.ico | Method:GET | Response:6msroute visited:/about | Method:GET | Response:4msroute visited:/ | Method:GET | Response:16ms
