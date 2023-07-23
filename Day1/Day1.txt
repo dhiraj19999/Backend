@@ -32,6 +32,6 @@ Concurrent.
 Note: Go through the Documentation of node as well, and experiment yourself,
 specially try some of the inbuilt node modules
 
-
+js is Dynamically typed becuse datatype of varible decleare during the runtime
 
 link=https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2023-01-26/Node%20Basics%20-%20I%20Notes_370235.pdf

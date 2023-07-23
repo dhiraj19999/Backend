@@ -30,7 +30,7 @@ fs.appendFile("./text.txt","i am suraj\n",(err)=>{
 at first hello get printed and then data get printed beacuse fs.redafile works asynchronesly
 
 fs.readfilesync works synchronesly so further opertions not get excuted until readfilesync not solved
-so at first dat get printed an after that byyy.. get printed
+so at first data get printed an after that byyy.. get printed
 fs.append add data in text.txt and it can also create new file.
 
 
