@@ -45,11 +45,12 @@ app.post("/adddatas",(req,res)=>{
 app.delete("/deletestudent",(req,res)=>{
     const data=fs.readFileSync("./data.json","utf-8") 
     // step 2 parse the data
-    const parsed_data=JSON.parse(JSON.parse(data))
+    const parsed_data=JSON.parse(data)
 
-    let new_data=parsed_data.filter((el)=>{
+    let new_data=parsed_data.students.filter((el)=>{
         return el.name!=="Dhiraj"
     })
+    fs.writeFileSync("./data.json",JSON.stringify(new_data))
 
     res.send("data deleted")
 
@@ -67,4 +68,6 @@ app.listen(4500,()=>{
 writefilesync overwrite data with new data
 JSON.stringify() A common use of JSON is to exchange data to/from a web server. When sending data to a
  web server, the data has to be a string. Convert a JavaScript object into a string with JSON.stringify() .
-*/
+JSON.PARSE conver string into  javascript object to perform multiple operations during coding
+
+ */
