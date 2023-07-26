@@ -21,7 +21,7 @@ const server=http.createServer((request,response)=>{
 
         let dataStream=fs.createReadStream("./data.json","utf8")
        
-        dataStream.pipe(data)
+        dataStream.pipe(response)
     } else if(request.url=="/addData" && request.method=="POST"){
        
        let str=""
