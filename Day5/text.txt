@@ -221,3 +221,6 @@ If i need to use cors() , i need to install it.
 npm i cors
 Why we use cors ? ⇒ Research This
 What is Cors ? ⇒ Cross Origin Resource Sharing ⇒ Research This
+
+cors is community middelware like trust issues suppose client have differnt origin or location
+and server has differnt location then it can't share data case cors
