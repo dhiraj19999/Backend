@@ -12,14 +12,20 @@ let {query}= req.query
 res.send(`Information about ${query}`)
 })
 Let us try to mimic the weather api thing
+
+
 app.get("/weather",(req,res)=>{
+
 const data={
 delhi:"Winters",
 chennai:"Summers"
 banglore:"winters"
 }
+
 const {city}=req.query
+
 const weather=data[city]
+
 res.send(`It's ${weather} in ${city}`)
 })
 Now this simple code will give you the result based on the query.
@@ -54,6 +60,25 @@ In both cases, the roll_no parameter is being passed as part of the request.
 However, in the first case, it is being passed as a dynamic segment of the URL
 (part of the params object), while in the second case it is being passed as a
 query string parameter (part of the query object).
+
+
+
+multiple queries 
+console.log(req.query)
+
+if(request.query.q1 && ! request.query.q2){
+    res.send(${req.query.q1}"is there")
+}else if(request.query.q2 && ! request.query.q1){
+    res.send(${req.query.q2}"is there")
+    }else{
+          res.send(${req.query.q1 } &${req.query.q2 } "is there") 
+    }
+
+
+
+
+
+
 Notes 3
 Databases
 What is a Database? ⇒ Database is a place where we can actually store our
