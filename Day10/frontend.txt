@@ -1,0 +1,17 @@
+
+
+to create notes in frontend
+
+const payload={
+    title,body
+}
+fetch("http://localhost:8080/notes/create,{
+
+    method:"POST",
+    headers:{
+        "Content-type":"applicatio/json",
+        "Authorization: localStorage.getItem("token")
+    },
+    body:JSON.Stringify(payload)
+})
+
