@@ -1,29 +1,36 @@
+const fs = require("fs");
 
-const fs=require('fs')
+fs.readFile("./text.txt", { encoding: "utf-8" }, (err, data) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(data);
+  }
+});
 
+console.log("hello");
 
-fs.readFile("./text.txt",{encoding:"utf-8"},(err,data)=>{ 
-    
+let dat = fs.readFileSync("./text.txt", { encoding: "utf-8" });
+console.log(dat);
+console.log("byyy..");
 
-    if(err){
-        console.log(err)
-    }else{
-        console.log(data)
+fs.appendFile("./text.txt", "i am suraj\n", (err) => {
+  if (err) console.log(err);
+  else console.log("data appended");
+});
+
+fs.appendFile(
+  "./log.txt",
+  "\nThis is me third time wrinting in the file\n",
+  (err) => {
+    if (err) {
+      console.log("Cannot be appended");
+      console.log(err);
+    } else {
+      console.log("Data has been appended in the file");
     }
-})
-
-
-console.log("hello")
-
-
-let dat=fs.readFileSync("./text.txt",{encoding:"utf-8"})
-console.log(dat)
-console.log("byyy..")
-
-fs.appendFile("./text.txt","i am suraj\n",(err)=>{
-    if(err) console.log(err)
-    else console.log("data appended")
-})
+  }
+);
 
 /*endcoding utf is used to convert data asycky to real value
 

@@ -1,38 +1,32 @@
-const express=require("express")
-const { Model } = require("mongoose")
+import express from "express";
 
-const noteRouter=express.Router()
+const noteRouter = express.Router();
 
-const  {NoteModel}=require("../models/Note.models")
+import NoteModel from "../../authentication/models/Note.models";
 
-noteRouter.post("/create",async(req,res)=>{
+noteRouter.post("/create", async (req, res) => {
+  const payload = req.body;
+  const note = new NoteModel(payload);
+  await note.save();
+  res.send({ msg: "notes added" });
+});
 
-    const payload=req.body
-    const note=new NoteModel(payload)
-    await note.save()
-    res.send({"msg":"notes added"})
-})
+noteRouter.get("/", async (req, res) => {
+  const notes = await NoteModel.find();
+  res.send("notes is here");
+});
 
-noteRouter.get("/",async(req,res)=>{
-
-const notes=await NoteModel.find()
-    res.send("notes is here")
-})
-
-noteRouter.delete("/delete/:id",async(req,res)=>{
-
-    const noteID=req.params.id
-    await NoteModel.findByIdAndDelete({_id:noteID})
-    res.send("Notes deleted")
-})
+noteRouter.delete("/delete/:id", async (req, res) => {
+  const noteID = req.params.id;
+  await NoteModel.findByIdAndDelete({ _id: noteID });
+  res.send("Notes deleted");
+});
 
 /*noteRouter.delete("/create",(req,res)=>{
 
     res.send("h")
 })*/
 
-
-module.exports={
-
-    noteRouter
-}
+module.exports = {
+  noteRouter,
+};

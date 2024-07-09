@@ -2,6 +2,7 @@ const express=require("express")
 const {connection}=require("./db")
 const {UserModel}=require("../Day9/model/Users.model")
 const jwt=require("jsonwebtoken")
+const { reset } = require("nodemon")
 const app=express()
 
 app.use(express.json())
@@ -42,7 +43,7 @@ if(user.length>0){
 
 })
 
-
+    
 
 app.get("/data",(req,res)=>{
    
